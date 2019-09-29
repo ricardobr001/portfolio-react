@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
+import { Header } from '../../theme'
+
 export const Container = styled.header`
   /* @media (max-width: 740px) {
     display: flex;
@@ -19,7 +21,7 @@ export const Container = styled.header`
     }
   } */
 
-  background: #4d4b4b;
+  background: ${Header.background};
   position: relative;
   width: 100%;
 
@@ -41,7 +43,7 @@ export const Container = styled.header`
 export const Page = styled(Link)`
   display: inline;
   text-decoration: none;
-  color: #d9d4d4;
+  color: ${Header.color};
   transition: opacity 0.2s;
 
   &:hover {
@@ -52,6 +54,7 @@ export const Page = styled(Link)`
     display: grid;
     justify-items: center;
     align-items: center;
+
     strong {
       padding: 5px;
       text-transform: uppercase;
