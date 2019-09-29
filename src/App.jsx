@@ -5,7 +5,7 @@ import Routes from './routes'
 import GlobalStyle from './styles/global'
 
 import history from './services/history'
-import Header from './components/header'
+import Header from './components/Header'
 
 function App() {
   return (
