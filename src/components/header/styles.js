@@ -21,6 +21,10 @@ export const Container = styled.header`
     }
   } */
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   background: ${Header.background};
   position: relative;
   width: 100%;
@@ -60,5 +64,21 @@ export const Page = styled(Link)`
       text-transform: uppercase;
       position: relative;
     }
+  }
+`
+
+export const Select = styled.select`
+  float: right;
+  cursor: pointer;
+  overflow-y: hidden;
+  padding: 2px 15px 2px 15px;
+  border-radius: 0px;
+  background: ${Header.optionBackground};
+  color: ${Header.optionColor};
+  appearance: none;
+  border: none;
+
+  option {
+    background: ${Header.optionBackground};
   }
 `
