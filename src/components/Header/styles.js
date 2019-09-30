@@ -68,6 +68,10 @@ export const Page = styled(Link)`
 `
 
 export const Select = styled.select`
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
   float: right;
   cursor: pointer;
   overflow-y: hidden;
