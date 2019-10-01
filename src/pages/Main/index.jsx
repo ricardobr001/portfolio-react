@@ -1,7 +1,17 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-function Main() {
-  return <h1>Main</h1>
+import { Container } from './styles'
+
+export default class Main extends Component {
+  render() {
+    return (
+      <Container>
+        <div>
+          <h1>Ricardo Mendes</h1>
+          <h4>Olá, gosto de games, codar, música, fotografia e lobos!</h4>
+          <h3>Welcome =)</h3>
+        </div>
+      </Container>
+    )
+  }
 }
-
-export default Main
