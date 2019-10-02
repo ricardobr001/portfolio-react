@@ -1,5 +1,5 @@
 import {
-  FaGithub,
+  FaGithubSquare,
   FaEnvelope,
   FaLinkedin,
   FaLastfmSquare,
@@ -9,7 +9,7 @@ import {
 
 export const social = [
   {
-    icon: FaGithub,
+    icon: FaGithubSquare,
     link: 'https://github.com/ricardobr001',
     title: 'ricardobr001'
   },
