@@ -15,7 +15,13 @@ class Footer extends Component {
       <Container>
         <div>
           {social.map(s => (
-            <a href={s.link} title={s.title} target="_blank">
+            <a
+              key={s.link}
+              href={s.link}
+              title={s.title}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <s.icon size={34} />
             </a>
           ))}
@@ -24,7 +30,11 @@ class Footer extends Component {
           <p>
             {phrases.graduated}
             <b>
-              <a href="https://www.sorocaba.ufscar.br" target="_blank">
+              <a
+                href="https://www.sorocaba.ufscar.br"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 UFSCar Sorocaba
               </a>
             </b>
@@ -33,7 +43,11 @@ class Footer extends Component {
           <p>
             {phrases.currently}
             <b>
-              <a href="https://gamersclub.com.br/" target="_blank">
+              <a
+                href="https://gamersclub.com.br/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Gamers Club
               </a>
             </b>
