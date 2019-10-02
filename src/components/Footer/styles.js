@@ -1,8 +1,34 @@
 import styled from 'styled-components'
 
-import { Footer } from '../../theme'
+import { Footer, SelectLang } from '../../theme'
 
 export const Container = styled.div`
+  /* iPhone 6/7/8 and samsung galaxy s9 */
+  @media (max-width: 414px) {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    div {
+      padding: 5px;
+
+      select {
+        justify-content: center;
+        cursor: pointer;
+        padding: 2px 15px 2px 15px;
+        border-radius: 0px;
+        background: ${SelectLang.background};
+        color: ${SelectLang.color};
+        appearance: none;
+        border: none;
+
+        option {
+          background: ${SelectLang.background};
+        }
+      }
+    }
+  }
+
   display: flex;
   justify-content: space-between;
   background: ${Footer.background};
@@ -42,5 +68,9 @@ export const Container = styled.div`
         }
       }
     }
+  }
+
+  select {
+    display: none;
   }
 `

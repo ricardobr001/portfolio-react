@@ -1,25 +1,13 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
-import { Header } from '../../theme'
+import { Header, SelectLang } from '../../theme'
 
 export const Container = styled.header`
-  /* @media (max-width: 740px) {
-    display: flex;
-    position: absolute;
-
-    ul {
-      float: right;
-      justify-content: center;
-      align-content: center;
-
-      li {
-        display: inline-block;
-        text-align: center;
-        width: 100%;
-      }
-    }
-  } */
+  /* iPhone 6/7/8 and samsung galaxy s9 */
+  @media (max-width: 414px) {
+    /* display: flex; */
+  }
 
   display: flex;
   justify-content: center;
@@ -68,6 +56,11 @@ export const Page = styled(Link)`
 `
 
 export const Select = styled.select`
+  /* iPhone 6/7/8 and samsung galaxy s9 */
+  @media (max-width: 600px) {
+    display: none;
+  }
+
   position: absolute;
   top: 50%;
   right: 30px;
@@ -77,12 +70,12 @@ export const Select = styled.select`
   overflow-y: hidden;
   padding: 2px 15px 2px 15px;
   border-radius: 0px;
-  background: ${Header.optionBackground};
-  color: ${Header.optionColor};
+  background: ${SelectLang.background};
+  color: ${SelectLang.color};
   appearance: none;
   border: none;
 
   option {
-    background: ${Header.optionBackground};
+    background: ${SelectLang.background};
   }
 `
