@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 
 import { FaUser, FaVolumeUp, FaPortrait } from 'react-icons/fa'
 import { Container, Page, Select } from './styles'
@@ -7,15 +8,6 @@ import { Container, Page, Select } from './styles'
 import { header } from '../../i18n/Languages'
 
 class Header extends Component {
-  constructor() {
-    super()
-
-    this.state = {
-      i18n: '',
-      phrases: header()
-    }
-  }
-
   handleLanguage(lang) {
     const { dispatch } = this.props
     localStorage.setItem('i18n', lang)
@@ -66,8 +58,16 @@ class Header extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  i18n: state.language.i18n,
+Header.propTypes = {
+  phrases: PropTypes.shape({
+    cv: PropTypes.string,
+    about: PropTypes.string,
+    listening: PropTypes.string
+  }).isRequired,
+  dispatch: PropTypes.func.isRequired
+}
+
+const mapStateToProps = () => ({
   phrases: header()
 })
 
