@@ -1,27 +1,33 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 import { FaUser, FaVolumeUp, FaPortrait } from 'react-icons/fa'
 import { Container, Page, Select } from './styles'
 
 import { header } from '../../i18n/Languages'
 
-export default class Header extends Component {
+class Header extends Component {
   constructor() {
     super()
 
     this.state = {
-      i18n: header()
+      i18n: '',
+      phrases: header()
     }
   }
 
-  handleLanguage(i18n) {
-    localStorage.setItem('i18n', i18n)
+  handleLanguage(lang) {
+    const { dispatch } = this.props
+    localStorage.setItem('i18n', lang)
 
-    this.setState({ i18n: header() })
+    dispatch({
+      type: '@lang/SAVE_LANG',
+      lang
+    })
   }
 
   render() {
-    const { i18n } = this.state
+    const { phrases } = this.props
 
     return (
       <Container>
@@ -30,7 +36,7 @@ export default class Header extends Component {
             <Page to="/about">
               <div>
                 <FaUser size={22} />
-                <strong>{i18n.about}</strong>
+                <strong>{phrases.about}</strong>
               </div>
             </Page>
           </li>
@@ -38,7 +44,7 @@ export default class Header extends Component {
             <Page to="/listening">
               <div>
                 <FaVolumeUp size={22} />
-                <strong>{i18n.listening}</strong>
+                <strong>{phrases.listening}</strong>
               </div>
             </Page>
           </li>
@@ -46,7 +52,7 @@ export default class Header extends Component {
             <Page to="/cv">
               <div>
                 <FaPortrait size={22} />
-                <strong>{i18n.cv}</strong>
+                <strong>{phrases.cv}</strong>
               </div>
             </Page>
           </li>
@@ -59,3 +65,10 @@ export default class Header extends Component {
     )
   }
 }
+
+const mapStateToProps = state => ({
+  i18n: state.language.i18n,
+  phrases: header()
+})
+
+export default connect(mapStateToProps)(Header)
