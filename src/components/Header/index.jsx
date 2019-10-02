@@ -60,9 +60,9 @@ class Header extends Component {
 
 Header.propTypes = {
   phrases: PropTypes.shape({
-    cv: PropTypes.string,
-    about: PropTypes.string,
-    listening: PropTypes.string
+    cv: PropTypes.string.isRequired,
+    about: PropTypes.string.isRequired,
+    listening: PropTypes.string.isRequired
   }).isRequired,
   dispatch: PropTypes.func.isRequired
 }
