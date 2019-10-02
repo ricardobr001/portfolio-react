@@ -28,13 +28,16 @@ export const Container = styled.div`
   div {
     color: azure;
     text-align: center;
+    font-size: 22px;
 
     h1 {
-      font-size: 500%;
-      font-weight: 700;
+      font-family: sans-serif;
+      font-size: 75px;
+      font-weight: bold;
     }
 
-    h4 {
+    h3 {
+      margin-top: 5px;
     }
   }
 `
