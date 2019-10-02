@@ -1,21 +1,15 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 
 import { Container } from './styles'
 import { footer } from '../../i18n/Languages'
 
 import { social } from './social'
 
-export default class Footer extends Component {
-  constructor() {
-    super()
-
-    this.state = {
-      i18n: footer()
-    }
-  }
-
+class Footer extends Component {
   render() {
-    const { i18n } = this.state
+    const { phrases } = this.props
 
     return (
       <Container>
@@ -28,7 +22,7 @@ export default class Footer extends Component {
         </div>
         <div>
           <p>
-            {i18n.graduated}
+            {phrases.graduated}
             <b>
               <a href="https://www.sorocaba.ufscar.br" target="_blank">
                 UFSCar Sorocaba
@@ -37,15 +31,32 @@ export default class Footer extends Component {
           </p>
 
           <p>
-            {i18n.currently}
+            {phrases.currently}
             <b>
               <a href="https://gamersclub.com.br/" target="_blank">
                 Gamers Club
               </a>
             </b>
           </p>
+          <select onChange={e => this.handleLanguage(e.target.value)}>
+            <option value="pt-br">pt-br</option>
+            <option value="en">en</option>
+          </select>
         </div>
       </Container>
     )
   }
 }
+
+Footer.propTypes = {
+  phrases: PropTypes.shape({
+    graduated: PropTypes.string.isRequired,
+    currently: PropTypes.string.isRequired
+  }).isRequired
+}
+
+const mapStateToProps = () => ({
+  phrases: footer()
+})
+
+export default connect(mapStateToProps)(Footer)
