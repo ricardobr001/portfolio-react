@@ -8,3 +8,7 @@ export const footer = {
   graduated: 'Formado em Ciência da Computação na ',
   currently: 'Atualmente desenvolvedor na '
 }
+
+export const main = {
+  subtitle: 'Olá, gosto de games, codar, música, fotografia e lobos!'
+}
