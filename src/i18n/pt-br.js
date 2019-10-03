@@ -10,5 +10,6 @@ export const footer = {
 }
 
 export const main = {
-  subtitle: 'Olá, gosto de games, codar, música, fotografia e lobos!'
+  subtitle: 'Olá, gosto de games, codar, música, fotografia e lobos!',
+  greetings: 'Bem vindo =)'
 }

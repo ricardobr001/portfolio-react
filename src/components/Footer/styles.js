@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import { Footer, SelectLang } from '../../theme'
 
 export const Container = styled.div`
-  /* iPhone 6/7/8 and samsung galaxy s9 */
-  @media (max-width: 414px) {
+  /* Break layout on footer */
+  @media (max-width: 804px) {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -68,9 +68,5 @@ export const Container = styled.div`
         }
       }
     }
-  }
-
-  select {
-    display: none;
   }
 `

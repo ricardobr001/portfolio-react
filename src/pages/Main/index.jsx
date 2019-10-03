@@ -11,7 +11,7 @@ function Main({ phrases }) {
       <div>
         <h1>Ricardo Mendes</h1>
         <h4>{phrases.subtitle}</h4>
-        <h3>Welcome =)</h3>
+        <h3>{phrases.greetings}</h3>
       </div>
     </Container>
   )
@@ -19,7 +19,8 @@ function Main({ phrases }) {
 
 Main.propTypes = {
   phrases: PropTypes.shape({
-    subtitle: PropTypes.string.isRequired
+    subtitle: PropTypes.string.isRequired,
+    greetings: PropTypes.string.isRequired
   }).isRequired
 }
 

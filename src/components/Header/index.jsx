@@ -8,6 +8,24 @@ import { Container, Page, Select } from './styles'
 import { header } from '../../i18n/Languages'
 
 class Header extends Component {
+  constructor() {
+    super()
+
+    this.state = {
+      i18n: ''
+    }
+  }
+
+  componentDidMount() {
+    const i18n = localStorage.getItem('i18n')
+
+    if (i18n) {
+      this.setState({ i18n })
+    } else {
+      this.setState({ i18n: 'pt-br' })
+    }
+  }
+
   handleLanguage(lang) {
     const { dispatch } = this.props
     localStorage.setItem('i18n', lang)
@@ -19,6 +37,7 @@ class Header extends Component {
   }
 
   render() {
+    const { i18n } = this.state
     const { phrases } = this.props
 
     return (
@@ -50,8 +69,12 @@ class Header extends Component {
           </li>
         </ul>
         <Select onChange={e => this.handleLanguage(e.target.value)}>
-          <option value="pt-br">pt-br</option>
-          <option value="en">en</option>
+          <option value="pt-br" selected={i18n === 'pt-br'}>
+            pt-br
+          </option>
+          <option value="en" selected={i18n === 'en'}>
+            en
+          </option>
         </Select>
       </Container>
     )

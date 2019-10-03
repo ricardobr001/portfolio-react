@@ -1,12 +1,14 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
+import arrow from '../../assets/arrow.png'
 import { Header, SelectLang } from '../../theme'
 
 export const Container = styled.header`
-  /* iPhone 6/7/8 and samsung galaxy s9 */
-  @media (max-width: 414px) {
-    /* display: flex; */
+  /* Break layout on footer */
+  @media (max-width: 804px) {
+    display: flex;
+    flex-direction: column;
   }
 
   display: flex;
@@ -56,9 +58,11 @@ export const Page = styled(Link)`
 `
 
 export const Select = styled.select`
-  /* iPhone 6/7/8 and samsung galaxy s9 */
-  @media (max-width: 600px) {
-    display: none;
+  /* Break layout on footer */
+  @media (max-width: 804px) {
+    position: relative;
+    top: 0;
+    right: 0;
   }
 
   position: absolute;
@@ -70,9 +74,9 @@ export const Select = styled.select`
   overflow-y: hidden;
   padding: 2px 15px 2px 15px;
   border-radius: 0px;
-  background: ${SelectLang.background};
   color: ${SelectLang.color};
   appearance: none;
+  background: url(${arrow}) ${SelectLang.background} no-repeat 115%;
   border: none;
 
   option {
