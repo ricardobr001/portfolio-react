@@ -29,6 +29,7 @@ class Header extends Component {
   handleLanguage(lang) {
     const { dispatch } = this.props
     localStorage.setItem('i18n', lang)
+    this.setState({ i18n: lang })
 
     dispatch({
       type: '@lang/SAVE_LANG',
@@ -68,13 +69,12 @@ class Header extends Component {
             </Page>
           </li>
         </ul>
-        <Select onChange={e => this.handleLanguage(e.target.value)}>
-          <option value="pt-br" selected={i18n === 'pt-br'}>
-            pt-br
-          </option>
-          <option value="en" selected={i18n === 'en'}>
-            en
-          </option>
+        <Select
+          value={i18n}
+          onChange={e => this.handleLanguage(e.target.value)}
+        >
+          <option value="pt-br">pt-br</option>
+          <option value="en">en</option>
         </Select>
       </Container>
     )
