@@ -23,16 +23,22 @@ export const about = {
   and: 'and',
   about_3: "with some songs that I like, check it out if you're interested.",
   programming:
-    "I've knowledge in some programming languages, like C, Java, Python, TypeScript/JavaScript and PHP.",
-  career_title: 'A little about my career',
-  milestone_1:
-    "In the university I've part of the academic center, helped in the organization of the Computer Science week (SeCoT) in addition, I've done a monitored study and helped some students with monitoring, more details are on my curriculum",
-  milestone_2_1:
-    'Durante o estágio tive contato com muitas coisas novas, tanto na área de infraestrutura, onde conheci mais a fundo a base dos sistemas de TI e também um pouco de automação com',
-  milestone_2_2:
-    'Também conheci mais a fundo a parte de desenvolvimento enquanto estava na área de aplicação, tendo contato com',
-  milestone_3_1:
-    'Atualmente estou como desenvolvedor backend jr, trabalhando principalmente com PHP, mais precisamente com CodeIgniter e também já tive contato com GO.',
-  milestone_3_2:
-    'Também me aventuro pelo frontend às vezes, onde tive contato com Vue e SASS.'
+    "I've knowledge in some programming languages, like C, Java, Python, TypeScript/JavaScript and PHP."
+}
+
+export const timeline = {
+  title: 'A little about my career',
+  milestone: [
+    [
+      "In the university I've part of the academic center, helped in the organization of the Computer Science week (SeCoT) in addition, I've done a monitored study and helped some students with monitoring, more details are on my curriculum"
+    ],
+    [
+      'Durante o estágio tive contato com muitas coisas novas, tanto na área de infraestrutura, onde conheci mais a fundo a base dos sistemas de TI e também um pouco de automação com',
+      'Também conheci mais a fundo a parte de desenvolvimento enquanto estava na área de aplicação, tendo contato com'
+    ],
+    [
+      "Currently I'm working as a junior back end developer, working mainly with PHP, more precisely with CodeIgniter, I've also had contactwith GO.",
+      "I also venture into the front end, sometimes, where I've had contact with Vue and SASS"
+    ]
+  ]
 }

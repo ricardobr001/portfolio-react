@@ -23,16 +23,22 @@ export const about = {
   and: 'e',
   about_3: 'com umas músicas que eu curto, caso você tenha interesse.',
   programming:
-    'Tenho conhecimento em algumas linguagens de programação, como C, Java, Python, TypeScript/JavaScript e PHP.',
-  career_title: 'Um pouco da minha trajetória',
-  milestone_1:
-    'Na universidade fiz parte do centro acadêmico, ajudei na organização da Semana da Computação (SeCoT) além de ter feito um estudo acompanhado e dado monitoria, mais detalhes se encontram no meu',
-  milestone_2_1:
-    'Durante o estágio tive contato com muitas coisas novas, tanto na área de infraestrutura, onde conheci mais a fundo a base dos sistemas de TI e também um pouco de automação com',
-  milestone_2_2:
-    'Também conheci mais a fundo a parte de desenvolvimento enquanto estava na área de aplicação, tendo contato com',
-  milestone_3_1:
-    'Atualmente estou como desenvolvedor backend jr, trabalhando principalmente com PHP, mais precisamente com CodeIgniter e também já tive contato com GO.',
-  milestone_3_2:
-    'Também me aventuro pelo frontend às vezes, onde tive contato com Vue e SASS.'
+    'Tenho conhecimento em algumas linguagens de programação, como C, Java, Python, TypeScript/JavaScript e PHP.'
+}
+
+export const timeline = {
+  title: 'Um pouco da minha trajetória',
+  milestone: [
+    [
+      'Na universidade fiz parte do centro acadêmico, ajudei na organização da Semana da Computação (SeCoT) além de ter feito um estudo acompanhado e dado monitoria, mais detalhes se encontram no meu'
+    ],
+    [
+      'Durante o estágio tive contato com muitas coisas novas, tanto na área de infraestrutura, onde conheci mais a fundo a base dos sistemas de TI e também um pouco de automação com',
+      'Também conheci mais a fundo a parte de desenvolvimento enquanto estava na área de aplicação, tendo contato com'
+    ],
+    [
+      'Atualmente estou como desenvolvedor backend jr, trabalhando principalmente com PHP, mais precisamente com CodeIgniter e também já tive contato com GO.',
+      'Também me aventuro pelo frontend às vezes, onde tive contato com Vue e SASS.'
+    ]
+  ]
 }

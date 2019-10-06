@@ -3,15 +3,13 @@ import styled from 'styled-components'
 import { Page } from '../../theme'
 
 export const Container = styled.div`
-  height: 100%;
-
   div {
     display: flex;
     justify-content: center;
-    padding: 50px 40px 0 0;
+    padding: 0 40px 0 0;
 
     div {
-      max-width: 500px;
+      max-width: 600px;
       display: flex;
       flex-direction: column;
       text-align: center;

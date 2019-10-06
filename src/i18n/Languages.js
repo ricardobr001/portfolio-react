@@ -2,13 +2,15 @@ import {
   header as enHeader,
   footer as enFooter,
   main as enMain,
-  about as enAbout
+  about as enAbout,
+  timeline as enTimeline
 } from './en'
 import {
   header as ptHeader,
   footer as ptFooter,
   main as ptMain,
-  about as ptAbout
+  about as ptAbout,
+  timeline as ptTimeline
 } from './pt-br'
 
 const DEFAULT = 'pt-br'
@@ -35,4 +37,10 @@ export function about() {
   let i18n = localStorage.getItem('i18n')
   i18n = i18n || DEFAULT
   return i18n === DEFAULT ? ptAbout : enAbout
+}
+
+export function timeline() {
+  let i18n = localStorage.getItem('i18n')
+  i18n = i18n || DEFAULT
+  return i18n === DEFAULT ? ptTimeline : enTimeline
 }
