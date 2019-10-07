@@ -33,11 +33,11 @@ export const timeline = {
       "In the university I've part of the academic center, helped in the organization of the Computer Science week (SeCoT) in addition, I've done a monitored study and helped some students with monitoring, more details are on my curriculum"
     ],
     [
-      'Durante o estágio tive contato com muitas coisas novas, tanto na área de infraestrutura, onde conheci mais a fundo a base dos sistemas de TI e também um pouco de automação com',
-      'Também conheci mais a fundo a parte de desenvolvimento enquanto estava na área de aplicação, tendo contato com'
+      "During my internship, I've had contact with many new things, in the infrastructure area, where I had a deeper knowledge of the IT systems and some automation with Ansible.",
+      'Also I had a deeper knowledge in development, while I was in the application architecture area, having contact with NodeJS and Angular.'
     ],
     [
-      "Currently I'm working as a junior back end developer, working mainly with PHP, more precisely with CodeIgniter, I've also had contactwith GO.",
+      "Currently I'm working as a junior back end developer, working mainly with PHP, more precisely with CodeIgniter, I've also had contact with GO.",
       "I also venture into the front end, sometimes, where I've had contact with Vue and SASS"
     ]
   ]
