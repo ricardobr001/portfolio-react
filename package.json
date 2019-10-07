@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.19.0",
     "history": "^4.10.1",
     "immer": "^4.0.0",
     "prop-types": "^15.7.2",
@@ -20,7 +21,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "mock": "node src/mock/server.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -47,6 +49,7 @@
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-hooks": "^1.7.0",
+    "json-server": "^0.15.1",
     "prettier": "^1.18.2"
   }
 }
