@@ -3,14 +3,16 @@ import {
   footer as enFooter,
   main as enMain,
   about as enAbout,
-  timeline as enTimeline
+  timeline as enTimeline,
+  listening as enListening
 } from './en'
 import {
   header as ptHeader,
   footer as ptFooter,
   main as ptMain,
   about as ptAbout,
-  timeline as ptTimeline
+  timeline as ptTimeline,
+  listening as ptListening
 } from './pt-br'
 
 const DEFAULT = 'pt-br'
@@ -43,4 +45,10 @@ export function timeline() {
   let i18n = localStorage.getItem('i18n')
   i18n = i18n || DEFAULT
   return i18n === DEFAULT ? ptTimeline : enTimeline
+}
+
+export function listening() {
+  let i18n = localStorage.getItem('i18n')
+  i18n = i18n || DEFAULT
+  return i18n === DEFAULT ? ptListening : enListening
 }

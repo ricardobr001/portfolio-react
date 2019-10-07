@@ -42,3 +42,9 @@ export const timeline = {
     ]
   ]
 }
+
+export const listening = {
+  now: 'Ouvindo agora',
+  total: 'Total de músicas tocadas desde Novembro de 2017',
+  artists: 'Algumas bandas que eu curto ouvir'
+}
