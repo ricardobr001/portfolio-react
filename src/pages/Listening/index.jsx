@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import propTypes from 'prop-types'
 
-import { listening } from '../../i18n/Languages'
+import { listening as langListening } from '../../i18n/Languages'
 import api from '../../services/api'
-import { Container } from './styles'
+import { Container, HvrBox } from './styles'
 
 class Listening extends Component {
   constructor() {
@@ -14,6 +14,7 @@ class Listening extends Component {
       songTitle: '',
       artist: '',
       songImage: '',
+      listening: false,
       lyric: '',
       totalScrobble: 0,
       artists: []
@@ -26,7 +27,14 @@ class Listening extends Component {
       api.get('/lastTopArtists')
     ])
 
-    const { name, image, artist, totalScrobble, lyric } = resLastSong.data
+    const {
+      name,
+      image,
+      artist,
+      totalScrobble,
+      lyric,
+      listening
+    } = resLastSong.data
     const artists = resTopArtists.data
 
     this.setState({
@@ -34,25 +42,33 @@ class Listening extends Component {
       songImage: image,
       artist,
       totalScrobble,
+      listening,
       lyric,
       artists
     })
   }
 
   render() {
-    const { songTitle, artist, songImage, totalScrobble, artists } = this.state
+    const {
+      songTitle,
+      artist,
+      songImage,
+      totalScrobble,
+      listening,
+      artists
+    } = this.state
     const { phrases } = this.props
 
     return (
       <Container>
         <div>
-          <p>
-            <h1>{phrases.now}</h1>
+          <div>
+            {listening ? <h1>{phrases.now}</h1> : <h1>{phrases.last}</h1>}
             <p>
               <b>{songTitle}</b> - <b>{artist}</b>
             </p>
             <img src={songImage} alt={songTitle} />
-          </p>
+          </div>
         </div>
         <div>
           <div>
@@ -64,7 +80,13 @@ class Listening extends Component {
           <div>
             <h1>{phrases.artists}</h1>
             {artists.map(a => (
-              <img src={a.image} alt="a.mbid" />
+              <HvrBox>
+                <img src={a.image} alt="a.mbid" />
+                <div>
+                  <p>{a.name}</p>
+                  <p>{a.playcount}</p>
+                </div>
+              </HvrBox>
             ))}
           </div>
         </div>
@@ -82,7 +104,7 @@ Listening.propTypes = {
 }
 
 const mapStateToProps = () => ({
-  phrases: listening()
+  phrases: langListening()
 })
 
 export default connect(mapStateToProps)(Listening)
