@@ -1,6 +1,14 @@
 import styled from 'styled-components'
 
+import { Button } from '../../theme'
+
 export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+`
+
+export const Row = styled.div`
   height: 100%;
   display: flex;
   justify-content: center;
@@ -14,9 +22,21 @@ export const Container = styled.div`
     div {
       display: flex;
       flex-direction: column;
+      align-items: center;
 
       h1 {
         font-size: 34px;
+      }
+
+      button {
+        background: ${Button.background};
+        color: ${Button.color};
+        font-size: 16px;
+        border-radius: 8px;
+        border: none;
+        width: 100px;
+        padding: 10px 0 10px 0;
+        margin-top: 10px;
       }
     }
 

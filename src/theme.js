@@ -39,3 +39,8 @@ export const Milestone = [
     link: '#e6e6f7'
   }
 ]
+
+export const Button = {
+  color: '#d9d4d4',
+  background: '#4d4b4b'
+}

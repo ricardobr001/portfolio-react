@@ -47,5 +47,6 @@ export const listening = {
   now: 'Listening now',
   last: 'Last song',
   total: 'Total of songs played since November of 2017',
-  artists: 'Some bands that I like to listen'
+  artists: 'Some bands that I like to listen',
+  lyric: 'See lyric'
 }
