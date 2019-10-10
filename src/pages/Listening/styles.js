@@ -6,6 +6,25 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 30px;
+
+  .display-enter,
+  .display-appear {
+    opacity: 0;
+    height: 0px;
+  }
+  .display-enter-active,
+  .display-appear-active {
+    opacity: 1;
+    height: 100%;
+    transition: opacity 200ms;
+  }
+  .display-exit {
+    opacity: 1;
+  }
+  .display-exit-active {
+    opacity: 0;
+    transition: opacity 200ms;
+  }
 `
 
 export const Row = styled.div`

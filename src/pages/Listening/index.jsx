@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import propTypes from 'prop-types'
+import { CSSTransition } from 'react-transition-group'
 
 import Lyric from '../../components/Lyric'
 
@@ -106,7 +107,17 @@ class Listening extends Component {
             </div>
           </div>
         </Row>
-        {showLyric ? <Lyric lyric={lyric} /> : <></>}
+        <CSSTransition
+          in={showLyric}
+          timeout={200}
+          classNames="display"
+          unmountOnExit
+          appear
+          enter
+          exit
+        >
+          <Lyric lyric={lyric} />
+        </CSSTransition>
       </Container>
     )
   }
