@@ -5,7 +5,9 @@ import { Button } from '../../theme'
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 30px;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0 30px 0;
 
   .display-enter,
   .display-appear {
@@ -45,17 +47,6 @@ export const Row = styled.div`
 
       h1 {
         font-size: 34px;
-      }
-
-      button {
-        background: ${Button.background};
-        color: ${Button.color};
-        font-size: 16px;
-        border-radius: 8px;
-        border: none;
-        width: 100px;
-        padding: 10px 0 10px 0;
-        margin-top: 10px;
       }
     }
 
@@ -107,4 +98,15 @@ export const HvrBox = styled.div`
       font-size: 20px;
     }
   }
+`
+
+export const Buttonn = styled.button`
+  background: ${Button.background};
+  color: ${Button.color};
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  width: 100px;
+  padding: 10px 0 10px 0;
+  margin-top: 10px;
 `

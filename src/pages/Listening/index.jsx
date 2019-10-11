@@ -7,7 +7,7 @@ import Lyric from '../../components/Lyric'
 
 import { listening as langListening } from '../../i18n/Languages'
 import api from '../../services/api'
-import { Container, Row, HvrBox } from './styles'
+import { Container, Row, HvrBox, Buttonn } from './styles'
 
 class Listening extends Component {
   constructor() {
@@ -81,9 +81,9 @@ class Listening extends Component {
                 <b>{songTitle}</b> - <b>{artist}</b>
               </p>
               <img src={songImage} alt={songTitle} />
-              <button type="button" onClick={this.handleShowLyric.bind(this)}>
+              <Buttonn type="button" onClick={this.handleShowLyric.bind(this)}>
                 {phrases.lyric}
-              </button>
+              </Buttonn>
             </div>
           </div>
           <div>
@@ -118,6 +118,11 @@ class Listening extends Component {
         >
           <Lyric lyric={lyric} />
         </CSSTransition>
+        {showLyric && (
+          <Buttonn type="button" onClick={this.handleShowLyric.bind(this)}>
+            {phrases.close}
+          </Buttonn>
+        )}
       </Container>
     )
   }
@@ -129,7 +134,8 @@ Listening.propTypes = {
     last: propTypes.string.isRequired,
     total: propTypes.string.isRequired,
     artists: propTypes.string.isRequired,
-    lyric: propTypes.string.isRequired
+    lyric: propTypes.string.isRequired,
+    close: propTypes.string.isRequired
   }).isRequired
 }
 

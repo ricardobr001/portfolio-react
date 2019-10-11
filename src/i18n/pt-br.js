@@ -48,5 +48,6 @@ export const listening = {
   last: 'Última música',
   total: 'Total de músicas tocadas desde Novembro de 2017',
   artists: 'Algumas bandas que eu curto ouvir',
-  lyric: 'Ver Letra'
+  lyric: 'Ver Letra',
+  close: 'Fechar'
 }
