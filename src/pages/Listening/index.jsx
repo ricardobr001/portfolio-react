@@ -5,6 +5,7 @@ import { CSSTransition } from 'react-transition-group'
 
 import { FaRedoAlt } from 'react-icons/fa'
 import Lyric from '../../components/Lyric'
+import MusicLoading from '../../components/MusicLoading'
 
 import { listening as langListening } from '../../i18n/Languages'
 import api from '../../services/api'
@@ -24,6 +25,7 @@ class Listening extends Component {
       totalScrobble: 0,
       showLyric: false,
       reloading: false,
+      loading: true,
       artists: []
     }
 
@@ -91,72 +93,79 @@ class Listening extends Component {
       lyric,
       artists,
       showLyric,
-      reloading
+      reloading,
+      loading
     } = this.state
     const { phrases } = this.props
 
     return (
-      <Container>
-        <Row>
-          <div>
-            <div>
-              {listening ? <h1>{phrases.now}</h1> : <h1>{phrases.last}</h1>}
-              <p>
-                <b>{songTitle}</b> - <b>{artist}</b>
-              </p>
-              <img src={songImage} alt={songTitle} />
-              <DivButtons>
-                <Buttonn type="button" onClick={this.handleShowLyric}>
-                  {phrases.lyric}
-                </Buttonn>
-                <Buttonn
-                  reloading={reloading}
-                  type="button"
-                  onClick={this.handleReloadLyric}
-                >
-                  <FaRedoAlt size={15} />
-                </Buttonn>
-              </DivButtons>
-            </div>
-          </div>
-          <div>
-            <div>
-              <p>{phrases.total}</p>
-              <h1>{totalScrobble}</h1>
-            </div>
-          </div>
-          <div>
-            <div>
-              <h1>{phrases.artists}</h1>
-              {artists.map(a => (
-                <HvrBox>
-                  <img src={a.image} alt="a.mbid" />
-                  <div>
-                    <p>{a.name}</p>
-                    <p>{a.playcount}</p>
-                  </div>
-                </HvrBox>
-              ))}
-            </div>
-          </div>
-        </Row>
-        <CSSTransition
-          in={showLyric}
-          timeout={200}
-          classNames="display"
-          unmountOnExit
-          appear
-          enter
-          exit
-        >
-          <Lyric lyric={lyric} />
-        </CSSTransition>
-        {showLyric && (
-          <Buttonn type="button" onClick={this.handleShowLyric}>
-            {phrases.close}
-          </Buttonn>
+      <>
+        {loading ? (
+          <MusicLoading />
+        ) : (
+          <Container>
+            <Row>
+              <div>
+                <div>
+                  {listening ? <h1>{phrases.now}</h1> : <h1>{phrases.last}</h1>}
+                  <p>
+                    <b>{songTitle}</b> - <b>{artist}</b>
+                  </p>
+                  <img src={songImage} alt={songTitle} />
+                  <DivButtons>
+                    <Buttonn type="button" onClick={this.handleShowLyric}>
+                      {phrases.lyric}
+                    </Buttonn>
+                    <Buttonn
+                      reloading={reloading}
+                      type="button"
+                      onClick={this.handleReloadLyric}
+                    >
+                      <FaRedoAlt size={15} />
+                    </Buttonn>
+                  </DivButtons>
+                </div>
+              </div>
+              <div>
+                <div>
+                  <p>{phrases.total}</p>
+                  <h1>{totalScrobble}</h1>
+                </div>
+              </div>
+              <div>
+                <div>
+                  <h1>{phrases.artists}</h1>
+                  {artists.map(a => (
+                    <HvrBox>
+                      <img src={a.image} alt="a.mbid" />
+                      <div>
+                        <p>{a.name}</p>
+                        <p>{a.playcount}</p>
+                      </div>
+                    </HvrBox>
+                  ))}
+                </div>
+              </div>
+            </Row>
+            <CSSTransition
+              in={showLyric}
+              timeout={200}
+              classNames="display"
+              unmountOnExit
+              appear
+              enter
+              exit
+            >
+              <Lyric lyric={lyric} />
+            </CSSTransition>
+            {showLyric && (
+              <Buttonn type="button" onClick={this.handleShowLyric}>
+                {phrases.close}
+              </Buttonn>
+            )}
+          </Container>
         )}
-      </Container>
+      </>
     )
   }
 }

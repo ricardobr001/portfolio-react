@@ -51,3 +51,8 @@ export const listening = {
   lyric: 'See lyric',
   close: 'Close'
 }
+
+export const listeningLoading = {
+  loading: 'Turning up the volume',
+  joke: 'Naahhh, for real, just turning the back end online'
+}
