@@ -23,6 +23,8 @@ class Listening extends Component {
       showLyric: false,
       artists: []
     }
+
+    this.handleShowLyric = this.handleShowLyric.bind(this)
   }
 
   async componentDidMount() {
@@ -81,7 +83,7 @@ class Listening extends Component {
                 <b>{songTitle}</b> - <b>{artist}</b>
               </p>
               <img src={songImage} alt={songTitle} />
-              <Buttonn type="button" onClick={this.handleShowLyric.bind(this)}>
+              <Buttonn type="button" onClick={this.handleShowLyric}>
                 {phrases.lyric}
               </Buttonn>
             </div>
@@ -119,7 +121,7 @@ class Listening extends Component {
           <Lyric lyric={lyric} />
         </CSSTransition>
         {showLyric && (
-          <Buttonn type="button" onClick={this.handleShowLyric.bind(this)}>
+          <Buttonn type="button" onClick={this.handleShowLyric}>
             {phrases.close}
           </Buttonn>
         )}
