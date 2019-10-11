@@ -3,10 +3,12 @@ import { connect } from 'react-redux'
 import propTypes from 'prop-types'
 import { CSSTransition } from 'react-transition-group'
 
+import { FaRedoAlt } from 'react-icons/fa'
 import Lyric from '../../components/Lyric'
 
 import { listening as langListening } from '../../i18n/Languages'
 import api from '../../services/api'
+
 import { Container, Row, HvrBox, Buttonn } from './styles'
 
 class Listening extends Component {
@@ -21,10 +23,12 @@ class Listening extends Component {
       lyric: '',
       totalScrobble: 0,
       showLyric: false,
+      reloading: false,
       artists: []
     }
 
     this.handleShowLyric = this.handleShowLyric.bind(this)
+    this.handleReloadLyric = this.handleReloadLyric.bind(this)
   }
 
   async componentDidMount() {
@@ -60,6 +64,23 @@ class Listening extends Component {
     this.setState({ showLyric: !showLyric })
   }
 
+  async handleReloadLyric() {
+    this.setState({ reloading: true })
+
+    const res = await api.get('/lastSong')
+    const { name, image, artist, totalScrobble, lyric, listening } = res.data
+
+    this.setState({
+      songTitle: name,
+      songImage: image,
+      artist,
+      totalScrobble,
+      listening,
+      lyric,
+      reloading: false
+    })
+  }
+
   render() {
     const {
       songTitle,
@@ -69,7 +90,8 @@ class Listening extends Component {
       listening,
       lyric,
       artists,
-      showLyric
+      showLyric,
+      reloading
     } = this.state
     const { phrases } = this.props
 
@@ -83,9 +105,18 @@ class Listening extends Component {
                 <b>{songTitle}</b> - <b>{artist}</b>
               </p>
               <img src={songImage} alt={songTitle} />
-              <Buttonn type="button" onClick={this.handleShowLyric}>
-                {phrases.lyric}
-              </Buttonn>
+              <div>
+                <Buttonn type="button" onClick={this.handleShowLyric}>
+                  {phrases.lyric}
+                </Buttonn>
+                <Buttonn
+                  reloading={reloading}
+                  type="button"
+                  onClick={this.handleReloadLyric}
+                >
+                  <FaRedoAlt size={15} />
+                </Buttonn>
+              </div>
             </div>
           </div>
           <div>

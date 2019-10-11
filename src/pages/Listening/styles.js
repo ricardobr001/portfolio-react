@@ -1,6 +1,14 @@
-import styled from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
 
 import { Button } from '../../theme'
+
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  } to {
+    transform: rotate(360deg);
+  }
+`
 
 export const Container = styled.div`
   display: flex;
@@ -47,6 +55,13 @@ export const Row = styled.div`
 
       h1 {
         font-size: 34px;
+      }
+
+      div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 300px;
       }
     }
 
@@ -100,7 +115,9 @@ export const HvrBox = styled.div`
   }
 `
 
-export const Buttonn = styled.button`
+export const Buttonn = styled.button.attrs(props => ({
+  disabled: props.reloading
+}))`
   background: ${Button.background};
   color: ${Button.color};
   font-size: 16px;
@@ -109,4 +126,17 @@ export const Buttonn = styled.button`
   width: 100px;
   padding: 10px 0 10px 0;
   margin-top: 10px;
+
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  ${props =>
+    props.reloading &&
+    css`
+      svg {
+        animation: ${rotate} 2s linear infinite;
+      }
+    `}
 `
