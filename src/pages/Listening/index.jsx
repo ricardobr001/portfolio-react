@@ -10,7 +10,7 @@ import MusicLoading from '../../components/MusicLoading'
 import { listening as langListening } from '../../i18n/Languages'
 import api from '../../services/api'
 
-import { Container, Row, HvrBox, Buttonn, DivButtons } from './styles'
+import { Container, Row, HvrBox, Buttonn, DivButtons, Master } from './styles'
 
 class Listening extends Component {
   constructor() {
@@ -56,7 +56,8 @@ class Listening extends Component {
       totalScrobble,
       listening,
       lyric,
-      artists
+      artists,
+      loading: false
     })
   }
 
@@ -99,7 +100,7 @@ class Listening extends Component {
     const { phrases } = this.props
 
     return (
-      <>
+      <Master showLyric={showLyric}>
         {loading ? (
           <MusicLoading />
         ) : (
@@ -165,7 +166,7 @@ class Listening extends Component {
             )}
           </Container>
         )}
-      </>
+      </Master>
     )
   }
 }

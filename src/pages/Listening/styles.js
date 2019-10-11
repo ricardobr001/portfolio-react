@@ -140,3 +140,11 @@ export const DivButtons = styled.div`
   justify-content: space-evenly;
   width: 300px;
 `
+
+export const Master = styled.div`
+  ${props =>
+    !props.showLyric &&
+    css`
+      height: 100%;
+    `}
+`
