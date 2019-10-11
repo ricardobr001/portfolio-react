@@ -9,7 +9,7 @@ import Lyric from '../../components/Lyric'
 import { listening as langListening } from '../../i18n/Languages'
 import api from '../../services/api'
 
-import { Container, Row, HvrBox, Buttonn } from './styles'
+import { Container, Row, HvrBox, Buttonn, DivButtons } from './styles'
 
 class Listening extends Component {
   constructor() {
@@ -105,7 +105,7 @@ class Listening extends Component {
                 <b>{songTitle}</b> - <b>{artist}</b>
               </p>
               <img src={songImage} alt={songTitle} />
-              <div>
+              <DivButtons>
                 <Buttonn type="button" onClick={this.handleShowLyric}>
                   {phrases.lyric}
                 </Buttonn>
@@ -116,7 +116,7 @@ class Listening extends Component {
                 >
                   <FaRedoAlt size={15} />
                 </Buttonn>
-              </div>
+              </DivButtons>
             </div>
           </div>
           <div>

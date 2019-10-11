@@ -56,13 +56,6 @@ export const Row = styled.div`
       h1 {
         font-size: 34px;
       }
-
-      div {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        width: 300px;
-      }
     }
 
     p {
@@ -139,4 +132,11 @@ export const Buttonn = styled.button.attrs(props => ({
         animation: ${rotate} 2s linear infinite;
       }
     `}
+`
+
+export const DivButtons = styled.div`
+  display: flex;
+  flex-direction: row !important;
+  justify-content: space-evenly;
+  width: 300px;
 `
