@@ -1,7 +1,34 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 
-// import { Container } from './styles';
+import { cvLang } from '../../i18n/Languages'
+import cvPt from '../../assets/cv-pt.pdf'
+import cvEn from '../../assets/cv-en.pdf'
 
-export default function CV() {
-  return <h1>CV</h1>
+import { Container } from './styles'
+
+function CV({ lang }) {
+  return (
+    <Container>
+      <div>
+        {lang === 'pt-br' && (
+          <embed src={cvPt} width="100%" height="1000" type="application/pdf" />
+        )}
+        {lang === 'en' && (
+          <embed src={cvEn} width="100%" height="1000" type="application/pdf" />
+        )}
+      </div>
+    </Container>
+  )
 }
+
+CV.propTypes = {
+  lang: PropTypes.string.isRequired
+}
+
+const mapStateToProps = () => ({
+  lang: cvLang()
+})
+
+export default connect(mapStateToProps)(CV)

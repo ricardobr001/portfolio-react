@@ -60,3 +60,8 @@ export function listeningLoading() {
   i18n = i18n || DEFAULT
   return i18n === DEFAULT ? ptListeningLoading : enListeningLoading
 }
+
+export function cvLang() {
+  const i18n = localStorage.getItem('i18n')
+  return i18n || DEFAULT
+}
