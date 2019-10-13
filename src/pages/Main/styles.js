@@ -9,7 +9,7 @@ export const Container = styled.div`
   }
 
   /* iPhone X */
-  @media screen and (max-width: 375px), screen and (max-height: 812px) {
+  @media screen and (max-width: 375px) and (max-height: 812px) {
     background-position: -210px;
   }
 
