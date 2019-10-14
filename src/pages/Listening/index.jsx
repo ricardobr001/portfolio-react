@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import propTypes from 'prop-types'
 import { CSSTransition } from 'react-transition-group'
 
+import CountUp from 'react-countup'
 import { FaRedoAlt } from 'react-icons/fa'
 import Lyric from '../../components/Lyric'
 import MusicLoading from '../../components/MusicLoading'
@@ -130,7 +131,12 @@ class Listening extends Component {
               <div>
                 <div>
                   <p>{phrases.total}</p>
-                  <h1>{totalScrobble}</h1>
+                  <CountUp
+                    start={0}
+                    end={totalScrobble}
+                    separator="."
+                    duration={4}
+                  />
                 </div>
               </div>
               <div>

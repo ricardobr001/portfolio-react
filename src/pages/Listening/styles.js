@@ -53,8 +53,9 @@ export const Row = styled.div`
       flex-direction: column;
       align-items: center;
 
-      h1 {
+      span {
         font-size: 34px;
+        font-weight: bold;
       }
     }
 
