@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import wolf from '../../assets/wolf.jpg'
+import wolf from '../../assets/img/wolf.jpg'
 
 export const Container = styled.div`
   /* iPhone 6/7/8 and samsung galaxy s9 */

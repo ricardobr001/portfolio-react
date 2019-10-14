@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
-import arrow from '../../assets/arrow.png'
+import arrow from '../../assets/img/arrow.png'
 import { Header, SelectLang } from '../../theme'
 
 export const Container = styled.header`

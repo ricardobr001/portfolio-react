@@ -9,7 +9,7 @@ import { link } from './links'
 
 import { Container } from './styles'
 import { about } from '../../i18n/Languages'
-import me from '../../assets/me.jpeg'
+import me from '../../assets/img/me.jpeg'
 
 function About({ phrases }) {
   return (

@@ -3,8 +3,8 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
 import { cvLang } from '../../i18n/Languages'
-import cvPt from '../../assets/cv-pt.pdf'
-import cvEn from '../../assets/cv-en.pdf'
+import cvPt from '../../assets/docs/cv-pt.pdf'
+import cvEn from '../../assets/docs/cv-en.pdf'
 
 import { Container } from './styles'
 
