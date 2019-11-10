@@ -10,6 +10,7 @@ import MusicLoading from '../../components/MusicLoading'
 
 import { listening as langListening } from '../../i18n/Languages'
 import api from '../../services/api'
+import notFoundBand from '../../assets/img/rockbandnotfound.png'
 
 import { Container, Row, HvrBox, Buttonn, DivButtons, Master } from './styles'
 
@@ -48,7 +49,7 @@ class Listening extends Component {
       lyric,
       listening
     } = resLastSong.data
-    const artists = resTopArtists.data
+    const artists = this.treatArtistsResponse(resTopArtists.data)
 
     this.setState({
       songTitle: name,
@@ -66,6 +67,18 @@ class Listening extends Component {
     const { showLyric } = this.state
 
     this.setState({ showLyric: !showLyric })
+  }
+
+  treatArtistsResponse = artists => {
+    return artists.reduce((acc, curr) => {
+      const obj = curr
+
+      if (obj.image === 'assets/img/rockbandnotfound.png') {
+        obj.image = notFoundBand
+      }
+
+      return [...acc, curr]
+    }, [])
   }
 
   async handleReloadLyric() {
