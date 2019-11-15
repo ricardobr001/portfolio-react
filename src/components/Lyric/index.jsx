@@ -6,9 +6,7 @@ import { Container } from './styles'
 export default function Lyric({ lyric }) {
   return (
     <Container>
-      {lyric.split('\n').map(l => (
-        <p>{l}</p>
-      ))}
+      {lyric.split('\n').map(l => (l === '' ? <br /> : <p>{l}</p>))}
     </Container>
   )
 }
