@@ -24,6 +24,7 @@ class Listening extends Component {
       songImage: '',
       listening: false,
       lyric: '',
+      lastTotalScrobble: 0,
       totalScrobble: 0,
       showLyric: false,
       reloading: false,
@@ -82,10 +83,12 @@ class Listening extends Component {
   }
 
   async handleReloadLyric() {
-    this.setState({ reloading: true })
+    let { totalScrobble } = this.state
+    this.setState({ reloading: true, lastTotalScrobble: totalScrobble })
 
     const res = await api.get('/lastSong')
-    const { name, image, artist, totalScrobble, lyric, listening } = res.data
+    totalScrobble = res.data.totalScrobble
+    const { name, image, artist, lyric, listening } = res.data
 
     this.setState({
       songTitle: name,
@@ -103,6 +106,7 @@ class Listening extends Component {
       songTitle,
       artist,
       songImage,
+      lastTotalScrobble,
       totalScrobble,
       listening,
       lyric,
@@ -145,7 +149,7 @@ class Listening extends Component {
                 <div>
                   <p>{phrases.total}</p>
                   <CountUp
-                    start={0}
+                    start={lastTotalScrobble}
                     end={totalScrobble}
                     separator="."
                     duration={4}

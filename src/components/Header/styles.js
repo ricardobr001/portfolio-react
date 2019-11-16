@@ -30,6 +30,11 @@ export const Container = styled.header`
     li {
       display: inline-block;
       padding: 20px 20px;
+      transition: opacity 0.2s;
+
+      &:hover {
+        opacity: 0.7;
+      }
     }
   }
 `
