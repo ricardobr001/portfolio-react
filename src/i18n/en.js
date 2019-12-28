@@ -61,7 +61,8 @@ export const listeningLoading = {
 export const graphic = {
   xaxisTitle: 'month - year',
   yaxisTitle: 'counter',
-  graphicTitle: 'Band Counter by Time'
+  graphicTitle: 'Band Counter by Time',
+  supported: 'Only supported in firefox at the moment'
 }
 
 export const graphicLoading = {

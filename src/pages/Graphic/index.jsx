@@ -65,15 +65,21 @@ class Graphic extends Component {
 
   render() {
     const { options, series, loading } = this.state
-    const { loadingPhrases } = this.props
+    const { loadingPhrases, phrases } = this.props
+    const isFirefox = typeof InstallTrigger !== 'undefined'
+    let showElement
+
+    if (isFirefox) {
+      showElement = (
+        <ReactApexChart options={options} series={series} type="line" />
+      )
+    } else {
+      showElement = <h1>{phrases.supported}</h1>
+    }
 
     return (
       <Container>
-        {loading ? (
-          <MusicLoading phrases={loadingPhrases} />
-        ) : (
-          <ReactApexChart options={options} series={series} type="line" />
-        )}
+        {loading ? <MusicLoading phrases={loadingPhrases} /> : showElement}
       </Container>
     )
   }
@@ -83,7 +89,8 @@ Graphic.propTypes = {
   phrases: propTypes.shape({
     xaxisTitle: propTypes.string.isRequired,
     yaxisTitle: propTypes.string.isRequired,
-    graphicTitle: propTypes.string.isRequired
+    graphicTitle: propTypes.string.isRequired,
+    supported: propTypes.string.isRequired
   }).isRequired,
   loadingPhrases: propTypes.shape({
     loading: propTypes.string.isRequired,
