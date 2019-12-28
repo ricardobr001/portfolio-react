@@ -1,6 +1,7 @@
 export const header = {
   about: 'about',
   listening: 'listening',
+  graphic: 'bands',
   cv: 'curriculum'
 }
 
@@ -30,15 +31,15 @@ export const timeline = {
   title: 'A little about my career',
   milestone: [
     [
-      "In the university I've part of the academic center, helped in the organization of the Computer Science week (SeCoT) in addition, I've done a monitored study and helped some students with monitoring, more details are on my curriculum"
+      "Currently I'm working as a junior back end developer, working mainly with PHP, more precisely with CodeIgniter, I've also had contact with GO.",
+      "I also venture into the front end, sometimes, where I've had contact with Vue and SASS"
     ],
     [
       "During my internship, I've had contact with many new things, in the infrastructure area, where I had a deeper knowledge of the IT systems and some automation with Ansible.",
       'Also I had a deeper knowledge in development, while I was in the application architecture area, having contact with NodeJS and Angular.'
     ],
     [
-      "Currently I'm working as a junior back end developer, working mainly with PHP, more precisely with CodeIgniter, I've also had contact with GO.",
-      "I also venture into the front end, sometimes, where I've had contact with Vue and SASS"
+      "In the university I've part of the academic center, helped in the organization of the Computer Science week (SeCoT) in addition, I've done a monitored study and helped some students with monitoring, more details are on my curriculum"
     ]
   ]
 }
@@ -54,5 +55,16 @@ export const listening = {
 
 export const listeningLoading = {
   loading: 'Turning up the volume',
+  joke: 'Naahhh, for real, just turning the back end online'
+}
+
+export const graphic = {
+  xaxisTitle: 'month - year',
+  yaxisTitle: 'counter',
+  graphicTitle: 'Band Counter by Time'
+}
+
+export const graphicLoading = {
+  loading: 'Getting some information out there to build a cool graphic',
   joke: 'Naahhh, for real, just turning the back end online'
 }

@@ -5,7 +5,9 @@ import {
   about as enAbout,
   timeline as enTimeline,
   listening as enListening,
-  listeningLoading as enListeningLoading
+  listeningLoading as enListeningLoading,
+  graphic as enGraphic,
+  graphicLoading as enGraphicLoading
 } from './en'
 import {
   header as ptHeader,
@@ -14,7 +16,9 @@ import {
   about as ptAbout,
   timeline as ptTimeline,
   listening as ptListening,
-  listeningLoading as ptListeningLoading
+  listeningLoading as ptListeningLoading,
+  graphic as ptGraphic,
+  graphicLoading as ptGraphicLoading
 } from './pt-br'
 
 const DEFAULT = 'pt-br'
@@ -64,4 +68,21 @@ export function listeningLoading() {
 export function cvLang() {
   const i18n = localStorage.getItem('i18n')
   return i18n || DEFAULT
+}
+
+export function graphic() {
+  let i18n = localStorage.getItem('i18n')
+  i18n = i18n || DEFAULT
+  return i18n === DEFAULT ? ptGraphic : enGraphic
+}
+
+export function locale() {
+  const i18n = localStorage.getItem('i18n')
+  return i18n || DEFAULT
+}
+
+export function graphicLoading() {
+  let i18n = localStorage.getItem('i18n')
+  i18n = i18n || DEFAULT
+  return i18n === DEFAULT ? ptGraphicLoading : enGraphicLoading
 }

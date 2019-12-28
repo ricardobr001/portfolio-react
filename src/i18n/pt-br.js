@@ -1,6 +1,7 @@
 export const header = {
   about: 'sobre mim',
   listening: 'ouvindo',
+  graphic: 'bandas',
   cv: 'currículo'
 }
 
@@ -30,15 +31,15 @@ export const timeline = {
   title: 'Um pouco da minha trajetória',
   milestone: [
     [
-      'Na universidade fiz parte do centro acadêmico, ajudei na organização da Semana da Computação (SeCoT) além de ter feito um estudo acompanhado e dado monitoria, mais detalhes se encontram no meu'
+      'Atualmente estou como desenvolvedor backend jr, trabalhando principalmente com PHP, mais precisamente com CodeIgniter e também já tive contato com GO.',
+      'Também me aventuro pelo frontend às vezes, onde tive contato com Vue e SASS.'
     ],
     [
       'Durante o estágio tive contato com muitas coisas novas, tanto na área de infraestrutura, onde conheci mais a fundo a base dos sistemas de TI e também um pouco de automação com',
       'Também conheci mais a fundo a parte de desenvolvimento enquanto estava na área de aplicação, tendo contato com'
     ],
     [
-      'Atualmente estou como desenvolvedor backend jr, trabalhando principalmente com PHP, mais precisamente com CodeIgniter e também já tive contato com GO.',
-      'Também me aventuro pelo frontend às vezes, onde tive contato com Vue e SASS.'
+      'Na universidade fiz parte do centro acadêmico, ajudei na organização da Semana da Computação (SeCoT) além de ter feito um estudo acompanhado e dado monitoria, mais detalhes se encontram no meu'
     ]
   ]
 }
@@ -54,5 +55,16 @@ export const listening = {
 
 export const listeningLoading = {
   loading: 'Aumentando o volume',
+  joke: 'Meeeh, na real ta ligando o backend'
+}
+
+export const graphic = {
+  xaxisTitle: 'mês - ano',
+  yaxisTitle: 'contador',
+  graphicTitle: 'Contador de Bandas pelo tempo'
+}
+
+export const graphicLoading = {
+  loading: 'Pegando algumas informações por ai pra montar um gráfico legal',
   joke: 'Meeeh, na real ta ligando o backend'
 }
