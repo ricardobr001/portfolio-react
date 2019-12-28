@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
-import { FaUser, FaVolumeUp, FaPortrait } from 'react-icons/fa'
+import { FaUser, FaVolumeUp, FaPortrait, FaChartLine } from 'react-icons/fa'
 import { Container, Page, Select } from './styles'
 
 import { header } from '../../i18n/Languages'
@@ -61,6 +61,14 @@ class Header extends Component {
             </Page>
           </li>
           <li>
+            <Page to="/graphic/bands">
+              <div>
+                <FaChartLine size={22} />
+                <strong>{phrases.graphic}</strong>
+              </div>
+            </Page>
+          </li>
+          <li>
             <Page to="/cv">
               <div>
                 <FaPortrait size={22} />
@@ -85,6 +93,7 @@ Header.propTypes = {
   phrases: PropTypes.shape({
     cv: PropTypes.string.isRequired,
     about: PropTypes.string.isRequired,
+    graphic: PropTypes.string.isRequired,
     listening: PropTypes.string.isRequired
   }).isRequired,
   dispatch: PropTypes.func.isRequired
