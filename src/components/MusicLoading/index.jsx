@@ -1,11 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
 
 import { Container } from './styles'
-import { listeningLoading } from '../../i18n/Languages'
 
-function MusicLoading({ phrases }) {
+export default function MusicLoading({ phrases }) {
   return (
     <Container>
       <svg
@@ -34,9 +32,3 @@ MusicLoading.propTypes = {
     joke: PropTypes.string.isRequired
   }).isRequired
 }
-
-const mapStateToProps = () => ({
-  phrases: listeningLoading()
-})
-
-export default connect(mapStateToProps)(MusicLoading)

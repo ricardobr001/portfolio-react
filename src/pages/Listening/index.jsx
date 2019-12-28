@@ -8,7 +8,10 @@ import { FaRedoAlt } from 'react-icons/fa'
 import Lyric from '../../components/Lyric'
 import MusicLoading from '../../components/MusicLoading'
 
-import { listening as langListening } from '../../i18n/Languages'
+import {
+  listening as langListening,
+  listeningLoading
+} from '../../i18n/Languages'
 import api from '../../services/api'
 import notFoundBand from '../../assets/img/rockbandnotfound.png'
 
@@ -115,12 +118,12 @@ class Listening extends Component {
       reloading,
       loading
     } = this.state
-    const { phrases } = this.props
+    const { phrases, loadingPhrases } = this.props
 
     return (
       <Master showLyric={showLyric}>
         {loading ? (
-          <MusicLoading />
+          <MusicLoading phrases={loadingPhrases} />
         ) : (
           <Container>
             <Row>
@@ -202,11 +205,16 @@ Listening.propTypes = {
     artists: propTypes.string.isRequired,
     lyric: propTypes.string.isRequired,
     close: propTypes.string.isRequired
+  }).isRequired,
+  loadingPhrases: propTypes.shape({
+    loading: propTypes.string.isRequired,
+    joke: propTypes.string.isRequired
   }).isRequired
 }
 
 const mapStateToProps = () => ({
-  phrases: langListening()
+  phrases: langListening(),
+  loadingPhrases: listeningLoading()
 })
 
 export default connect(mapStateToProps)(Listening)
