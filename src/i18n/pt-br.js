@@ -39,7 +39,7 @@ export const timeline = {
       'Também conheci mais a fundo a parte de desenvolvimento enquanto estava na área de aplicação, tendo contato com'
     ],
     [
-      'Na universidade fiz parte do centro acadêmico, ajudei na organização da Semana da Computação (SeCoT) além de ter feito um estudo acompanhado e dado monitoria, mais detalhes se encontram no meu'
+      'Na universidade fiz parte do centro acadêmico, ajudei na organização da Semana da Computação (SeCoT) além de ter feito um estudo acompanhado e dado monitoria, mais detalhes se encontram no meu currículo'
     ]
   ]
 }

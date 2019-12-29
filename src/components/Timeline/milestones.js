@@ -17,7 +17,7 @@ export const milestones = [
   },
   {
     icon: FaUserGraduate,
-    link: 'https://github.com/ricardobr001',
+    link: 'https://www.sorocaba.ufscar.br/',
     title: 'UFSCar',
     subtitle: 'Sorocaba, SP',
     year: '2015 - 2018'
