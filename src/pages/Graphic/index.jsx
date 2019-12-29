@@ -45,7 +45,7 @@ class Graphic extends Component {
     this.setState({ series, loading: !loading })
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps) {
     const { phrases } = this.props
 
     if (prevProps.phrases !== phrases) {
@@ -57,6 +57,7 @@ class Graphic extends Component {
 
       const { graphicTitle, xaxisTitle, yaxisTitle } = phrases
 
+      // eslint-disable-next-line react/no-did-update-set-state
       this.setState({
         options: generateGraphicOptions(graphicTitle, xaxisTitle, yaxisTitle)
       })
@@ -65,21 +66,20 @@ class Graphic extends Component {
 
   render() {
     const { options, series, loading } = this.state
-    const { loadingPhrases, phrases } = this.props
-    const isFirefox = typeof InstallTrigger !== 'undefined'
-    let showElement
-
-    if (isFirefox) {
-      showElement = (
-        <ReactApexChart options={options} series={series} type="line" />
-      )
-    } else {
-      showElement = <h1>{phrases.supported}</h1>
-    }
+    const { loadingPhrases } = this.props
 
     return (
       <Container>
-        {loading ? <MusicLoading phrases={loadingPhrases} /> : showElement}
+        {loading ? (
+          <MusicLoading phrases={loadingPhrases} />
+        ) : (
+          <ReactApexChart
+            options={options}
+            series={series}
+            type="line"
+            width="1280"
+          />
+        )}
       </Container>
     )
   }
@@ -89,8 +89,7 @@ Graphic.propTypes = {
   phrases: propTypes.shape({
     xaxisTitle: propTypes.string.isRequired,
     yaxisTitle: propTypes.string.isRequired,
-    graphicTitle: propTypes.string.isRequired,
-    supported: propTypes.string.isRequired
+    graphicTitle: propTypes.string.isRequired
   }).isRequired,
   loadingPhrases: propTypes.shape({
     loading: propTypes.string.isRequired,

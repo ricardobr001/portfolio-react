@@ -61,8 +61,7 @@ export const listeningLoading = {
 export const graphic = {
   xaxisTitle: 'mês - ano',
   yaxisTitle: 'contador',
-  graphicTitle: 'Contador de Bandas pelo tempo',
-  supported: 'Suportado apenas no Firefox no momento'
+  graphicTitle: 'Contador de Bandas pelo tempo'
 }
 
 export const graphicLoading = {
