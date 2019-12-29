@@ -3,6 +3,9 @@ import moment from 'moment'
 export function generateGraphicOptions(graphicTitle, xaxisTitle, yaxisTitle) {
   return {
     chart: {
+      animations: {
+        enabled: false
+      },
       toolbar: {
         show: false
       }
