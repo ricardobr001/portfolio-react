@@ -6,7 +6,7 @@ export const milestones = [
     link: 'https://www.gamersclub.com.br/',
     title: 'Gamers Club',
     subtitle: 'Sorocaba, SP',
-    year: '2019'
+    year: '2019 - '
   },
   {
     icon: FaCreditCard,

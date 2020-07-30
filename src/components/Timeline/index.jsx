@@ -29,7 +29,7 @@ function Timeline({ phrases }) {
             contentArrowStyle={{
               borderRight: `7px solid ${Milestone[i].background}`
             }}
-            date={m.year}
+            date={!i ? m.year + phrases.today : m.year}
             iconStyle={{ background: Milestone[i].background }}
             icon={<m.icon />}
             key={m.title}
@@ -57,6 +57,7 @@ function Timeline({ phrases }) {
 Timeline.propTypes = {
   phrases: PropTypes.shape({
     title: PropTypes.string.isRequired,
+    today: PropTypes.string,
     milestone: PropTypes.arrayOf(PropTypes.array).isRequired
   }).isRequired
 }

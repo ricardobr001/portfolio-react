@@ -18,7 +18,7 @@ export const main = {
 export const about = {
   greetings: 'Welcome to my portfolio!!',
   about_1:
-    "I play some games, like Fortnite, Overwatch, League of Legends (Riven) and sometimes CS:GO. I've finished my gradutation in Computer Science in the end of 2018 at UFSCar - Sorocaba  and today I'm working as a junior back end developer at Gamers Club.",
+    "My name is Ricardo Mendes, I play some games, like Fortnite, Overwatch, League of Legends (Riven) and sometimes CS:GO. I've finished my gradutation in Computer Science in the end of 2018 at UFSCar - Sorocaba and today I'm working as a Software Engineer at Gamers Club.",
   about_2:
     "I like a lot to code and today I'm working with CodeIgniter, also I love to listen to good rock \\,,/, here are two of my playlists",
   and: 'and',
@@ -29,10 +29,11 @@ export const about = {
 
 export const timeline = {
   title: 'A little about my career',
+  today: 'Currently',
   milestone: [
     [
-      "Currently I'm working as a junior back end developer, working mainly with PHP, more precisely with CodeIgniter, I've also had contact with GO.",
-      "I also venture into the front end, sometimes, where I've had contact with Vue and SASS"
+      "Currently I'm working as a Software Engineer mostly with backend, working mainly with PHP (CodeIgniter) and NodeJS using TypeScript (NestJS). I've also had contact with Golang.",
+      "I also venture into the front end, sometimes, where I've had contact with Vue, React and SASS"
     ],
     [
       "During my internship, I've had contact with many new things, in the infrastructure area, where I had a deeper knowledge of the IT systems and some automation with Ansible.",

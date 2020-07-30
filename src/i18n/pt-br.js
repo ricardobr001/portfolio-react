@@ -18,7 +18,7 @@ export const main = {
 export const about = {
   greetings: 'Bem vindo ao meu portfolio!!',
   about_1:
-    'Jogo alguns games, como Fortnite, Overwatch, League of Lengends (Riven) e às vezes um CS:GO. Finalizei a graduação em Ciência da Computação no final de 2018 na UFSCar - Sorocaba e atualmente estou como desenvolvedor backend jr na Gamers Club.',
+    'Meu nome é Ricardo Mendes, jogo alguns games, como Fortnite, Overwatch, League of Lengends (Riven) e às vezes um CS:GO. Finalizei a graduação em Ciência da Computação no final de 2018 na UFSCar - Sorocaba e atualmente estou como Engenheiro de Software na Gamers Club.',
   about_2:
     'Gosto bastante de programar e atualmente estou trabalhando com CodeIgniter, além de gostar de um bom Rock \\,,/, aqui tem duas playlists',
   and: 'e',
@@ -29,10 +29,11 @@ export const about = {
 
 export const timeline = {
   title: 'Um pouco da minha trajetória',
+  today: 'Atualmente',
   milestone: [
     [
-      'Atualmente estou como desenvolvedor backend jr, trabalhando principalmente com PHP, mais precisamente com CodeIgniter e também já tive contato com GO.',
-      'Também me aventuro pelo frontend às vezes, onde tive contato com Vue e SASS.'
+      'Atualmente estou como Engenheiro de Software, trabalhando principalmente com PHP (CodeIgniter) e NodeJS com TypeScript (NestJS) e também já tive contato com Golang.',
+      'Também me aventuro pelo frontend às vezes, onde tive contato com Vue, React e SASS.'
     ],
     [
       'Durante o estágio tive contato com muitas coisas novas, tanto na área de infraestrutura, onde conheci mais a fundo a base dos sistemas de TI e também um pouco de automação com',
