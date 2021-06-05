@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import propTypes from 'prop-types'
-import { CSSTransition } from 'react-transition-group'
 
 import CountUp from 'react-countup'
 import { FaRedoAlt } from 'react-icons/fa'
-import Lyric from '../../components/Lyric'
 import MusicLoading from '../../components/MusicLoading'
 
 import {
@@ -15,7 +13,7 @@ import {
 import api from '../../services/api'
 import notFoundBand from '../../assets/img/rockbandnotfound.png'
 
-import { Container, Row, HvrBox, Buttonn, DivButtons, Master } from './styles'
+import { Container, Row, HvrBox, Buttonn, DivButtons, Master, LyricButton, LyricNotFound } from './styles'
 
 class Listening extends Component {
   constructor() {
@@ -35,13 +33,12 @@ class Listening extends Component {
       artists: []
     }
 
-    this.handleShowLyric = this.handleShowLyric.bind(this)
     this.handleReloadLyric = this.handleReloadLyric.bind(this)
   }
 
   async componentDidMount() {
     const [resLastSong, resTopArtists] = await Promise.all([
-      api.get('/lastSong'),
+      api.get('/v2/lastSong'),
       api.get('/lastTopArtists')
     ])
 
@@ -50,7 +47,7 @@ class Listening extends Component {
       image,
       artist,
       totalScrobble,
-      lyric,
+      url,
       listening
     } = resLastSong.data
     const artists = this.treatArtistsResponse(resTopArtists.data)
@@ -61,16 +58,10 @@ class Listening extends Component {
       artist,
       totalScrobble,
       listening,
-      lyric,
+      url,
       artists,
       loading: false
     })
-  }
-
-  handleShowLyric = () => {
-    const { showLyric } = this.state
-
-    this.setState({ showLyric: !showLyric })
   }
 
   treatArtistsResponse = artists => {
@@ -89,9 +80,9 @@ class Listening extends Component {
     let { totalScrobble } = this.state
     this.setState({ reloading: true, lastTotalScrobble: totalScrobble })
 
-    const res = await api.get('/lastSong')
+    const res = await api.get('/v2/lastSong')
     totalScrobble = res.data.totalScrobble
-    const { name, image, artist, lyric, listening } = res.data
+    const { name, image, artist, url, listening } = res.data
 
     this.setState({
       songTitle: name,
@@ -99,7 +90,7 @@ class Listening extends Component {
       artist,
       totalScrobble,
       listening,
-      lyric,
+      url,
       reloading: false
     })
   }
@@ -112,7 +103,7 @@ class Listening extends Component {
       lastTotalScrobble,
       totalScrobble,
       listening,
-      lyric,
+      url,
       artists,
       showLyric,
       reloading,
@@ -135,9 +126,17 @@ class Listening extends Component {
                   </p>
                   <img src={songImage} alt={songTitle} />
                   <DivButtons>
-                    <Buttonn type="button" onClick={this.handleShowLyric}>
-                      {phrases.lyric}
-                    </Buttonn>
+                    {url === '404 NOT FOUND\n¯\\_(ツ)_/¯' ?
+                      <LyricNotFound>{phrases.lyric}</LyricNotFound> :
+                      <LyricButton
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        type="button"
+                      >
+                        {phrases.lyric}
+                      </LyricButton>
+                    }
                     <Buttonn
                       reloading={reloading}
                       type="button"
@@ -174,22 +173,6 @@ class Listening extends Component {
                 </div>
               </div>
             </Row>
-            <CSSTransition
-              in={showLyric}
-              timeout={200}
-              classNames="display"
-              unmountOnExit
-              appear
-              enter
-              exit
-            >
-              <Lyric lyric={lyric} />
-            </CSSTransition>
-            {showLyric && (
-              <Buttonn type="button" onClick={this.handleShowLyric}>
-                {phrases.close}
-              </Buttonn>
-            )}
           </Container>
         )}
       </Master>
@@ -203,7 +186,7 @@ Listening.propTypes = {
     last: propTypes.string.isRequired,
     total: propTypes.string.isRequired,
     artists: propTypes.string.isRequired,
-    lyric: propTypes.string.isRequired,
+    url: propTypes.string.isRequired,
     close: propTypes.string.isRequired
   }).isRequired,
   loadingPhrases: propTypes.shape({

@@ -149,3 +149,29 @@ export const Master = styled.div`
       height: 100%;
     `}
 `
+
+export const LyricButton = styled.a`
+  background: ${Button.background};
+  color: ${Button.color};
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  width: 100px;
+  padding: 10px 0 10px 0;
+  margin-top: 10px;
+  text-decoration: none;
+`
+
+export const LyricNotFound = styled.div`
+  background: ${Button.background};
+  color: ${Button.color};
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  width: 100px;
+  padding: 10px 0 10px 0;
+  margin-top: 10px;
+  text-decoration: none;
+  cursor: not-allowed;
+  opacity: 0.6;
+`

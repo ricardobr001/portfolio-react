@@ -1,5 +1,4 @@
 import produce from 'immer'
-// import * as Phrases from '../../../i18n/Languages'
 
 export default function language(state = {}, action) {
   switch (action.type) {
